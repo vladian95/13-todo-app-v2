@@ -10,16 +10,16 @@ function App() {
 
   const addTodoHandler = (text) => {
     const newTodo = {
-      text: text,
+      text,
       isCompleted: false,
       id: uuidv4(),
     };
-    console.log(newTodo);
+
     setTodos([...todos, newTodo]);
   };
 
-  const deleteTodoHandler = (index) => {
-    setTodos(todos.filter((_, idx) => idx !== index));
+  const deleteTodoHandler = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
